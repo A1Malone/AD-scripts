@@ -3,7 +3,7 @@ scripts for AD
 
 Simple AD PowerShell Commands
 
-##Domain Commands
+## Domain Commands
 
 Display basic domain info 
 ```
@@ -24,7 +24,7 @@ invoke-command -ComputerName DC-Name -scriptblock {wbadmin start systemstateback
 
 
 
-##User Commands
+## User Commands
 
 List all attibutes of a user 
 (change "username" to the name of the user)
@@ -76,4 +76,4 @@ Search-ADAccount -LockedOut
 
 
 
-##Group Commands
+## Group Commands
