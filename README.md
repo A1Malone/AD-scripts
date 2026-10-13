@@ -77,3 +77,46 @@ Search-ADAccount -LockedOut
 
 
 ## Group Commands
+
+Display all suers in a security group
+```
+Get-ADGroupMember -identity “GROUP NAME HERE”
+```
+
+List all Security Groups
+```
+Get-ADGroup -filter *
+```
+
+Add a user or users to a group
+```
+Add-ADGroupMember -Identity group-name -Members USER1, USER2
+```
+
+Import a list of Users to a group from a .csv file
+(change"itadd-to-group.csv" to name of csv file)
+```
+$members = Import-CSV c:itadd-to-group.csv | Select-Object -ExpandProperty samaccountname Add-ADGroupMember -Identity hr-n-drive-rw -Members $members
+```
+
+## Computer commands
+
+List all computers
+```
+Get-AdComputer -filter *
+```
+
+list all computers by name 
+```
+Get-ADComputer -filter * | select name
+```
+
+list all computers in an OU
+```
+Get-ADComputer -SearchBase "OU=DN" -Filter *
+```
+
+List all computers by OS
+```
+Get-ADComputer -filter {OperatingSystem -Like '*CHANGE OS HERE*'} -property * | select name, operatingsystem
+```
